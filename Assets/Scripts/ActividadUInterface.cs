@@ -15,7 +15,6 @@ public class Actividad : MonoBehaviour
     public TextMeshProUGUI textoEmail;
     public Image imagenPerfil;
 
-    // 1. AGREGAMOS LAS VARIABLES DE LOS BOTONES Y LA LISTA
     public Button botonAnterior;
     public Button botonSiguiente;
     private UsuarioData[] listaUsuarios;
@@ -23,7 +22,6 @@ public class Actividad : MonoBehaviour
 
     void Start()
     {
-        // Apagamos los botones hasta que la API termine de responder
         botonAnterior.interactable = false;
         botonSiguiente.interactable = false;
 
@@ -32,9 +30,9 @@ public class Actividad : MonoBehaviour
 
     IEnumerator GetUser()
     {
-        // 2. MODIFICAMOS LA URL PARA PEDIR 10 USUARIOS (Y EN ALFABETO LATINO)
+        
         UnityWebRequest www = UnityWebRequest.Get("https://randomuser.me/api/?results=10&nat=us,es,gb");
-        yield return www.SendWebRequest(); // Usamos SendWebRequest para mayor compatibilidad
+        yield return www.SendWebRequest(); 
 
         if (www.result != UnityWebRequest.Result.Success)
         {
@@ -45,15 +43,12 @@ public class Actividad : MonoBehaviour
             string result = www.downloadHandler.text;
             RespuestaAPI datosParseados = JsonUtility.FromJson<RespuestaAPI>(result);
 
-            // 3. GUARDAMOS LA LISTA COMPLETA Y MOSTRAMOS EL PRIMERO
             listaUsuarios = datosParseados.results;
             indiceActual = 0;
             ActualizarUI();
         }
     }
 
-    // 4. MOVIMOS TODA LA LÓGICA DE RELLENAR TEXTOS A UNA FUNCIÓN NUEVA
-    // Así los botones pueden llamarla cada vez que cambiamos de usuario
     void ActualizarUI()
     {
         UsuarioData usuarioActual = listaUsuarios[indiceActual];
@@ -74,12 +69,10 @@ public class Actividad : MonoBehaviour
 
         StartCoroutine(GetTexture(usuarioActual.picture.large));
 
-        // 5. LÓGICA DE BOTONES: Se apagan en los bordes de la lista
         botonAnterior.interactable = (indiceActual > 0);
         botonSiguiente.interactable = (indiceActual < listaUsuarios.Length - 1);
     }
 
-    // 6. FUNCIONES PARA LOS BOTONES DE LA INTERFAZ
     public void SiguienteUsuario()
     {
         if (indiceActual < listaUsuarios.Length - 1)
@@ -114,7 +107,6 @@ public class Actividad : MonoBehaviour
         }
     }
 
-    // --- Clases para parsear el JSON ---
     [System.Serializable]
     public class RespuestaAPI
     {
