@@ -54,7 +54,7 @@ public class SinImpuesto : ICalculadorImpuesto
     }
 }
 
-
+/*
 List<double> carritoDeCompras = new List<double> { 100, 50, 200 };
 
 ICalculadorImpuesto tipoDeImpuesto = new ImpuestoNormal();
@@ -64,3 +64,4 @@ bool esFrecuente = true;
 ProcesadorDeVentas procesador = new ProcesadorDeVentas();
 
 double totalAPagar = procesador.CalcularTotal(carritoDeCompras, tipoDeImpuesto, esFrecuente);
+*/
