@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Contenido 
+public abstract class Contenido : IReproducible
 {
     protected string titulo;
     protected int duracionMinutos;
@@ -32,4 +32,9 @@ public class Contenido
     {
         return $"Título: {titulo}, Duración: {duracionMinutos} minutos, Género: {genero}, Fecha de Lanzamiento: {fechaLanzamiento.ToShortDateString()}";
     }
+
+    public abstract void reproducir();
+    public abstract void pausar();
+
+    public abstract void detener();
 }

@@ -8,11 +8,11 @@ public class Serie : Contenido, IReproducible
     private int numeroTemporadas;
     private Dictionary<int, int> episodiosPorTemporada;
 
-    public Serie(string titulo, int duracion, string genero, DateTime fechaLanzamiento, int numeroTemporadas, Dictionary<int, int> episodiosPorTemporada)
+    public Serie(string titulo, int duracion, string genero, DateTime fechaLanzamiento, int numeroTemporadas)
         : base(titulo, duracion, genero, fechaLanzamiento)
     {
         this.numeroTemporadas = numeroTemporadas;
-        this.episodiosPorTemporada = episodiosPorTemporada;
+        episodiosPorTemporada = new Dictionary<int, int>();
     }
 
     public int obtenerTotalEpisodios()
@@ -30,17 +30,17 @@ public class Serie : Contenido, IReproducible
         return $"{obtenerInformacion()}, Número de Temporadas: {numeroTemporadas}, Total de Episodios: {obtenerTotalEpisodios()}";
     }
 
-    public void reproducir()
+    public override void reproducir()
     {
         Debug.Log($"Reproduciendo la serie: {getTitulo()}");
     }
 
-    public void pausar()
+    public override void pausar()
     {
         Debug.Log($"Pausando la serie: {getTitulo()}");
     }   
 
-    public void detener()
+    public override void detener()
     {
         Debug.Log($"Deteniendo la serie: {getTitulo()}");
     }

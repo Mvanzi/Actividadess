@@ -20,17 +20,17 @@ public class Pelicula : Contenido, IReproducible
         return $"{obtenerInformacion()}, Director: {director}, Año de Estreno: {anioEstreno}";
     }
 
-    public void reproducir()
+    public override void reproducir()
     {
         Debug.Log($"Reproduciendo la película: {getTitulo()}");
     }
 
-    public void pausar()
+    public override void pausar()
     {
         Debug.Log($"Pausando la película: {getTitulo()}");
     }
 
-    public void detener()
+    public override void detener()
     {
         Debug.Log($"Deteniendo la película: {getTitulo()}");
     }

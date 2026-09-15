@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Podcast : MonoBehaviour
+public class Podcast : Contenido, IReproducible
 {
-    // Start is called before the first frame update
-    void Start()
+    private string presentador;
+    private string tema;
+
+    public Podcast(string titulo, int duracionMinutos, string genero, DateTime fechaLanzamiento, string presentador, string tema)
+        : base(titulo, duracionMinutos, genero, fechaLanzamiento)
     {
-        
+        this.presentador = presentador;
+        this.tema = tema;
     }
 
-    // Update is called once per frame
-    void Update()
+    public string obtenerInformacionPodcast()
     {
-        
+        return $"{obtenerInformacion()}, Presentador: {presentador}, Tema: {tema}";
+    }
+    public override void reproducir()
+    {
+        Debug.Log($"Reproduciendo el podcast: {getTitulo()}");
+    }
+
+    public override void pausar()
+    {
+        Debug.Log($"Pausando el podcast: {getTitulo()}");
+    }
+
+    public override void detener()
+    {
+        Debug.Log($"Deteniendo el podcast: {getTitulo()}");
     }
 }
