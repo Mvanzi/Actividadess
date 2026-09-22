@@ -5,15 +5,15 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Implementacion
+public class Implementacion:MonoBehaviour
 {
-    public static void Main(string[] args)
+    public void Start()
     {
 
         Contenido cancion = new Cancion("Still D.R.E.", 4, "Hip Hop", new System.DateTime(1999, 11, 2), "Dr. Dre ft. Snoop Dogg", "2001");
         Contenido podcast = new Podcast("The Wild Project", 180, "Entrevistas", new System.DateTime(2024, 2, 20), "Jordi Wild", "Actualidad y debate");
         Contenido pelicula = new Pelicula("Tren Bala", 126, "Acción", new System.DateTime(2022, 8, 5), "David Leitch", 2022);
-        Contenido serie = new Serie("The Office", 22, "Comedia", new System.DateTime(2005, 3, 24), 9);
+        Serie serie = new Serie("The Office", 22, "Comedia", new System.DateTime(2005, 3, 24), 9);
 
         PlataformaStreaming menflis = new PlataformaStreaming("Menflis", "www.menflis.com");
         PlataformaStreaming musicYA = new PlataformaStreaming("MusicYA", "www.musicya.com");
@@ -54,7 +54,7 @@ public class Implementacion
             Console.WriteLine("Ocurrió un error: " + ex.Message);
         }
 
-        int episodios = ((Serie)serie).obtenerTotalEpisodios();
+        int episodios = serie.obtenerTotalEpisodios();
 
     }
 }
