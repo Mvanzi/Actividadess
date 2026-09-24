@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "login": {
+        "username": "leo",
+        "password": "123"
+      },
+      "name": {
+        "first": "Leo",
+        "last": "Pizzuti"
+      },
+      "location": {
+        "street": {
+          "number": 7806,
+          "name": "Bregneveien"
+        },
+        "city": "Grodas",
+        "state": "Rogaland",
+        "country": "Norway"
+      },
+      "email": "otto.overeng@example.com",
+      "dob": {
+        "age": 57
+      },
+      "phone": "32421810",
+      "picture": {
+        "large": "chad.jpg"
+      }
+    },
+    {
+      "login": {
+        "username": "facu",
+        "password": "456"
+      },
+      "name": {
+        "first": "facu",
+        "last": "intile"
+      },
+      "location": {
+        "street": {
+          "number": 123,
+          "name": "Avenida Siempre Viva"
+        },
+        "city": "Springfield",
+        "state": "Buenos Aires",
+        "country": "Argentina"
+      },
+      "email": "juan.perez@example.com",
+      "dob": {
+        "age": 34
+      },
+      "phone": "555-1234",
+      "picture": {
+        "large": "chad2.jpg"
+      }
+    },
+    {
+      "login": {
+        "username": "jane_d",
+        "password": "789"
+      },
+      "name": {
+        "first": "Jane",
+        "last": "Doe"
+      },
+      "location": {
+        "street": {
+          "number": 404,
+          "name": "Not Found St"
+        },
+        "city": "London",
+        "state": "England",
+        "country": "United Kingdom"
+      },
+      "email": "jane.doe@example.com",
+      "dob": {
+        "age": 28
+      },
+      "phone": "987654321",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/44.jpg"
+      }
+    }
+  ]
+}
