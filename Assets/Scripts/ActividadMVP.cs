@@ -1,3 +1,4 @@
+/*
 using System.IO;
 using System.Collections;
 using UnityEngine;
@@ -43,7 +44,7 @@ public class LoginPresenter //PRESENTADOR
     {
         this.vista = vista;
         this.modelo = modelo;
-        this.baseDeDatos = modelo.CargarUsuarios(); // Carga el archivo al iniciar
+        this.baseDeDatos = modelo.CargarUsuarios(); 
     }
 
     public void IntentarLogin(string username, string password)
@@ -58,6 +59,7 @@ public class LoginPresenter //PRESENTADOR
                 usuarioEncontrado = u;
                 break;
             }
+
         }
 
         if (usuarioEncontrado == null)
@@ -193,7 +195,10 @@ public class ActividadMVP : MonoBehaviour, ILoginView //VISTA
 
 
 [System.Serializable]
-public class RespuestaAPI { public UsuarioData[] results; } //DATOS
+public class RespuestaAPI  //DATOS
+{  
+    public UsuarioData[] results; 
+} 
 
 [System.Serializable]
 public class UsuarioData
@@ -230,3 +235,4 @@ public class DobData { public int age; }
 
 [System.Serializable]
 public class PictureData { public string large; }
+*/
